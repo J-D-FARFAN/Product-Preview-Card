@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap');
+
+:root{
+    --bgColor: hsl(30, 38%, 92%);
+    --bgSecondColor: hsl(0, 0%, 100%);
+    --txtColor: hsla(228, 13%, 53%, 0.811);
+    --fontSecod: "Fraunces", serif;
+    --darkCyan: hsl(158, 36%, 37%);
+    --veryDarkBlue: hsl(212, 21%, 14%);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+
+body{
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bgColor);
+
+    .content__all{
+        width: fit-content;
+        height: fit-content;
+        background-color: var(--bgSecondColor);
+        display: flex;
+        border-radius: 14px;
+        overflow: hidden;
+
+        .content--imageProduct{
+            width: 350px;
+            height: 500px;
+            background-image: url(images/image-product-desktop.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            filter: saturate(120%);
+        }
+
+        .contentInformationProduct{
+            width: 330px;
+            padding: 2rem;
+
+            .category{
+                font-size: 13px;
+                text-transform: uppercase;
+                letter-spacing: 6px;
+                font-weight: bold;
+                color: var(--txtColor);
+            }
+
+            .title{
+                font-size: 2.2rem;
+                font-family: var(--fontSecod);
+                line-height: 2rem;
+                margin: 2rem 0;
+            }
+
+            .txt{
+                color: var(--txtColor);
+                font-weight: 500;
+                margin-bottom: 2.5rem;
+                line-height: 1.5rem;
+                font-size: 16px;
+            }
+
+            .contentPrice{
+                .contentIndividualPrice{
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                    margin-bottom: 2rem;
+
+                    .priceDescount{
+                        font-size: 2rem;
+                        font-weight: bolder;
+                        font-family: var(--fontSecod);
+                        color: var(--darkCyan);
+                    }
+                    .priceNormal{
+                        font-size: 14px;
+                        color: rgba(0, 0, 0, 0.349);
+                        text-decoration: line-through;
+                        font-weight: 600;
+                    }
+                }
+                .contentBTNSubmit{
+                    width: 100%;
+                    height: 50px;
+                    border-radius: 9px;
+                    background-color: var(--darkCyan);
+
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 8px;
+                    cursor: pointer;
+                    &:hover{
+                        background-color: var(--veryDarkBlue);
+                        input[type="submit"]{background-color: var(--veryDarkBlue);}
+                    }
+
+                    input[type="submit"]{
+                        background-color: var(--darkCyan);
+                        border: none;
+                        outline: none;
+                        cursor: pointer;
+                        color: var(--bgSecondColor);
+                        font-weight: bold;
+                        letter-spacing: .8px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 700px){
+    body{
+        height: 100%;
+
+        .content__all{
+            width: 100%;
+            height: 100%;
+            margin: 2rem 1rem;
+            flex-direction: column;
+            .content--imageProduct{
+                width: 100%;
+                height: 280px;
+                background-image: url(images/image-product-mobile.jpg);
+            }
+
+            .contentInformationProduct{
+                width: 100%;
+                padding: 1.5rem;
+                .title{
+                    font-size: 2rem;
+                    margin: 1.5rem 0;
+                }
+                .txt{
+                    font-size: 14px;
+                    margin-bottom: 1.5rem;
+                }
+            }
+        }
+    }
+}
